@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "RegisterCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+            <h3 style="font-family:Tahoma,'B Yekan';margin-top:20px;"><img style="height:400px;margin-left:auto;margin-right:auto" src="~/MyImages/img_532171.png" /></h3>
+            <div style="margin-top:60px;margin-left:auto;margin-right:auto">
+                @using ((Html.BeginForm("SaveCustomer",
+                                "CustomerLogin",
+                                FormMethod.Post)))
+                {
+                    <label style="float:right">UserName</label>
+                    <input required name="UserName" class="form-control" style="direction:rtl" />
+                    <label style="float:right">:Password</label>
+                    <input required type="number" name="Password" class="form-control" style="direction:rtl" />
+                    <label style="float:right">:Mobile</label>
+                    <input required name="Mobile" class="form-control" style="direction:rtl" />
+                    <div class="form-group" style="margin-left:90%;margin-top:20px;">
+                        <div class="col-md-offset-2 col-md-10 ">
+                            <input type="submit" value="save" class="btn btn-success" style="margin-bottom:5px;font-family:Tahoma,'B Yekan'" />
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>

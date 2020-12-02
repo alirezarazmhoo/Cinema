@@ -1,0 +1,51 @@
+﻿@model Cinema.Models.Ticket
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+            @{
+                if (String.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <h3 style="font-family:Tahoma,'B Yekan';margin-top:100px;"><img src="/MyImages/46540507.jpg" style="width:60%;height:250px;" /></h3>
+
+				}
+				else
+				{
+
+            <h3 style="font-family:Tahoma,'B Yekan';margin-top:100px;"><img src="~/Upload/Movie/@Model.Movie.ImageUrl" style="width:60%;height:250px;" /></h3>
+				}
+            }
+            <div style="margin-top:60px;margin-left:auto;margin-right:auto">
+
+                <label style="float:right">MovieTitle</label>
+                <p>@Model.Movie.Name</p>
+
+                <label style="float:right"> IMDB</label>
+                <p>@Model.Movie.IMDBPoint</p>
+
+                <label style="float:right">CreatedDate</label>
+                <p>@Model.Movie.CreatedDate.Year/@Model.Movie.CreatedDate.Month/@Model.Movie.CreatedDate.Day</p>
+                <label style="float:right">Director</label>
+                <p>@Model.Movie.Director</p>
+                <label style="float:right">Actors</label>
+                <p>@Model.Movie.Actors</p>
+                <label style="float:right">Story</label>
+                <p>@Model.Movie.Summary</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<p>
+    <a style="font-family:Tahoma,'B Yekan';margin-top:20px;" class="btn btn-danger" href="/Home/Index"> Cancel</a>
+    <a style="font-family:Tahoma,'B Yekan';margin-top:20px;" class="btn btn-success" href="/TicketInfo/SaveRequest/@Model.Id">Accept&SaveRequest</a>
+</p>
